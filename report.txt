@@ -1,0 +1,46 @@
+১. সার্চ বক্সে কিছু লিখে সার্চ দিলে। সার্চ রেজাল্ট ওয়েবসাইট এ দেখায় না। কেন দেখায় না। সেটা ফিক্স করতে হবে। (Resolved)
+
+***There was a typo in JavaScript code.***
+
+".then(data => showImages(data.hitS))" ====>>>> ".then(data => showImages(data.hits))"
+
+২. স্লাইডার দেখানোর জন্য ইমেজ সিলেক্ট করলে, স্লাইডার দেখায় না। সেটা একটু ফিক্স করতে হবে।  (Resolved)
+
+***There was a miss-spelling in HTML id.***
+
+id="doration" ====>>>> id="duration"
+
+৩. স্লাইডার এর স্পিড যদি নেগেটিভ নাম্বার দেয়া হয়ে তাহলে সে মাথা খারাপ করে ফেলে। একটার কিছু একটা সমাধান করতে হবে (Resolved)
+
+Using a if condition. 
+
+    imagesArea.style.display = "none";
+    const duration = document.getElementById("duration").value || 1000;
+    if (duration <= 0) {
+        alert("Sorry, but you have to set the duration to 1000 millisecond or more.");
+    } else {
+        sliders.forEach((slide) => {
+            let item = document.createElement("div");
+            item.className = "slider-item";
+            item.innerHTML = `<img class="w-100"
+    src="${slide}"
+    alt="">`;
+            sliderContainer.appendChild(item);
+        });
+        changeSlide(0);
+        timer = setInterval(function () {
+            slideIndex++;
+            changeSlide(slideIndex);
+        }, duration);
+    }
+};
+
+
+
+
+
+
+
+
+ 
+
