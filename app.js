@@ -128,6 +128,10 @@ searchBtn.addEventListener("click", function () {
     const search = document.getElementById("search");
     getImages(search.value);
     sliders.length = 0;
+
+    imageCounter.innerText = 00;
+    search.value = "";
+    duration.value = "";
 });
 
 sliderBtn.addEventListener("click", function () {
